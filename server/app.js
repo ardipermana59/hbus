@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 // Import routes
 const authRoutes = require('./routes/auth.routes');
+const userRoutes = require('./routes/user.routes');
 const taskRoutes = require('./routes/task.routes');
 const logRoutes = require('./routes/log.routes');
 
@@ -37,6 +38,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/api/v1', authRoutes);
+app.use('/api/v1', userRoutes);
 app.use('/api/v1', taskRoutes);
 app.use('/api/v1', logRoutes);
 
