@@ -54,7 +54,7 @@ JWT_SECRET=your_secret_key_here
 NODE_ENV=development
 ```
 
-4. Setup database dan jalankan SQL schema
+4. Setup database dan jalankan SQL schema. Import dari file `database.sql`
 
 5. Start server:
 ```bash
