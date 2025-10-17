@@ -38,13 +38,13 @@ const login = async (req, res) => {
     const user = await User.findByEmail(email);
 
     if (!user) {
-      return ResponseHelper.notFound(res, 'Email atau password salah');
+      return ResponseHelper.error(res, 400, 'Email atau password salah');
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!isPasswordValid) {
-      return ResponseHelper.unauthorized(res, 'Email atau password salah');
+      return ResponseHelper.error(res, 400, 'Email atau password salah');
     }
 
     const token = jwt.sign(
